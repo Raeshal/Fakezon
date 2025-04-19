@@ -1,8 +1,20 @@
+/* Main styles */
 .home-container {
-    padding: 40px;
-    background: linear-gradient(135deg, #e0f7fa, #f8f9fa);
-    min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #e0f7fa, #f8f9fa);
+  min-height: 100vh;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .home-container {
+    padding: 10px !important;
+    background: pink !important;
+    margin: 9rem auto !important;
+    min-height: auto !important;
   }
+}
+
   
   .home-title {
     text-align: center;

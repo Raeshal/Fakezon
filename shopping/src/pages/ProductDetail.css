@@ -10,6 +10,25 @@
     align-items: center;
     background-color: #fdfdfd;
   }
+
+  @media(max-width:600px)
+  {
+    .product-detail-container {
+      margin: 100px auto;
+      padding: 36px;
+      display: block;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      background-color: #fdfdfd;
+    }
+
+    .product-detail-container h3 {
+      margin-left: 1rem;
+    }
+  }
   
   .product-detail-container img {
     width: 100%;

@@ -66,9 +66,10 @@ nav a {
   }
 
   nav {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
+    padding: 21px;
+          height: 5rem;
+          flex-direction: row;
+          width: 105%;
   }
 
   nav a, .logout-button {
