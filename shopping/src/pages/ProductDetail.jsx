@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Swal from 'sweetalert2'; // ✅ import SweetAlert2
+import Swal from 'sweetalert2';
 import { useCart } from '../context/CartContext';
+import './ProductDetail.css';
+import { ClipLoader } from 'react-spinners'; 
+
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -26,15 +29,28 @@ export default function ProductDetail() {
     });
   };
 
-  if (!product) return <p>Loading...</p>;
+  if (!product) {
+    return (
+      <div className="loader-container">
+        <ClipLoader color="#36d7b7" size={60} />
+      </div>
+    );
+  }
 
   return (
     <div className="product-detail-container">
       <h2>{product.title}</h2>
-      <img src={product.image} alt={product.title} height={150} />
+      <img src={product.image} alt={product.title} height={180} />
       <p>{product.description}</p>
       <h3>${product.price}</h3>
-      <button onClick={handleAddToCart}>Add to Cart</button>
+      <button onClick={handleAddToCart} style={{
+      backgroundColor: 'green',
+      color: 'white',
+      padding: '8px 16px',
+      borderRadius: '5px',
+      border: 'none',
+      cursor: 'pointer'
+    }}>Add to Cart</button>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
@@ -12,9 +12,11 @@ const PrivateRoute = ({ children }) => {
 };
 
 export default function App() {
+  const location = useLocation();
+
   return (
     <>
-      <Header />
+      {location.pathname !== '/' && <Header />}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>} />

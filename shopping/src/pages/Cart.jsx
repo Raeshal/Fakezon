@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import { useCart } from '../context/CartContext';
+import './Cart.css';
 
 export default function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
@@ -22,6 +23,7 @@ export default function Cart() {
   };
 
   return (
+    
     <div className="cart-container">
       <h2>Your Cart</h2>
 
@@ -33,12 +35,28 @@ export default function Cart() {
             {cartItems.map((item) => (
               <li key={item.id}>
                 {item.title} - ${item.price}
-                <button onClick={() => removeFromCart(item.id)} style={{ marginLeft: 10 }}>Remove</button>
+                <button style={{
+      backgroundColor: '#dc3545',
+      color: 'white',
+      padding: '8px 16px',
+      borderRadius: '5px',
+      border: 'none',
+      cursor: 'pointer',
+      margin:'auto'
+    }} onClick={() => removeFromCart(item.id)} >Remove</button>
               </li>
             ))}
           </ul>
           <p>Total: ${total}</p>
-          <button onClick={handleCheckout}>Checkout</button>
+          <button style={{
+      backgroundColor: 'green',
+      color: 'white',
+      padding: '8px 16px',
+      borderRadius: '5px',
+      border: 'none',
+      cursor: 'pointer'
+      
+    }} onClick={handleCheckout}>Checkout</button>
         </>
       )}
     </div>

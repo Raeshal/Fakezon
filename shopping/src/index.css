@@ -9,6 +9,11 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  margin: 0;
+}
+#root
+{
+  margin: 0;
 }
 
 a {
@@ -22,13 +27,24 @@ a:hover {
 
 /* Header Styles */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #212529; /* or your navbar color */
+  z-index: 1000;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #007bff;
   color: white;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* 💡 wrap content on smaller screens */
+  gap: 10px;
 }
+
 
 header h1 {
   font-size: 26px;
@@ -43,12 +59,30 @@ nav a {
   color: white;
   font-size: 16px;
 }
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  nav a, .logout-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 /* Home Page Styles */
 .home-container {
-  max-width: 900px;
+  max-width: 100rem;
   margin: 40px auto;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .home-container h2 {

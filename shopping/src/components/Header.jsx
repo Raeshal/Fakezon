@@ -12,13 +12,65 @@ export default function Header() {
   };
 
   return (
-    <header style={{ padding: '10px 20px', background: '#007bff', color: 'white', display: 'flex', justifyContent: 'space-between' }}>
-      <h2>Shopping App</h2>
-      <nav>
-        <Link to="/home" style={{ color: 'white', marginRight: 20 }}>Home</Link>
-        <Link to="/cart" style={{ color: 'white', marginRight: 20 }}>Cart ({cartItems.length})</Link>
-        <button onClick={handleLogout} style={{ background: 'transparent', border: 'none', color: 'white', cursor: 'pointer' }}>Logout</button>
-      </nav>
+    <header
+  style={{
+    padding: '12px 24px',
+    background: '#343a40',
+    color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+  }}
+>
+  <h1 style={{ margin: 0, fontSize: '1.8rem', fontWeight: 'bold', letterSpacing: '1px' }}>
+    🛒 Shopping App
+  </h1>
+      <nav style={{ padding: '10px' }}>
+  <Link
+    to="/home"
+    style={{
+      backgroundColor: '#28a745',
+      color: 'white',
+      padding: '8px 16px',
+      borderRadius: '5px',
+      textDecoration: 'none',
+      marginRight: '10px'
+    }}
+  >
+    Home
+  </Link>
+
+  <Link
+    to="/cart"
+    style={{
+      backgroundColor: '#ffc107',
+      color: 'black',
+      padding: '8px 16px',
+      borderRadius: '5px',
+      textDecoration: 'none',
+      marginRight: '10px'
+    }}
+  >
+    Cart ({cartItems.length})
+  </Link>
+
+  <button
+    onClick={handleLogout}
+    style={{
+      backgroundColor: '#dc3545',
+      color: 'white',
+      padding: '8px 16px',
+      borderRadius: '5px',
+      border: 'none',
+      cursor: 'pointer',
+      fontSize: 'larger'
+    }}
+  >
+    Logout
+  </button>
+</nav>
+
     </header>
   );
 }
